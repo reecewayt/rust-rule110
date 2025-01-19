@@ -1,7 +1,8 @@
 # Rust-Rule110
 Author: Reece Wayt  
 Contact: reecwayt@pdx.edu  
-Date: 1/18/2025  
+Date: 1/18/2025 
+GitHub Repo: https://github.com/reecewayt/rust-rule110 
 ---
 ## Algorithm Description
 A simple rust application for assignment 1 of CS 523.
@@ -11,9 +12,23 @@ Rule 110 is a elementary cellular automata which means each cell is binary 0 or 
   ![Rule 110 Pattern](./docs/images/rule-110-wolfram-ref.png)  
   *Image source: [Wolfram MathWorld - Rule 110](https://mathworld.wolfram.com/Rule110.html)*
 
-Here I'm using **u8** method for encapsulating generational data. Another method could use an array instead. 
+## Implementation Notes
+- Uses `u8` ddata type to store each cellular automata generation
+- Includes unit tests for corner cases to test wrap around behavior and base case from assignment requirements
 
-## Building and running the application
+## Running application, tests, and rustdoc
 ```bash
+#run application main() entry
 cargo run
+# run #[test] cases
+cargo test
+# run rustdoc
+cargo doc --no-deps --open
 ```
+**Note**: I'm running wsl which requires some additional steps to natively launch the rustdoc html in a browser. If you're also on wsl follow this guide to run browsers from wsl. [Run Linux Gui Apps from WSL](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps)
+
+### Sources
+- Algorithm Reference: [Wolfram MathWorld - Rule 110](https://mathworld.wolfram.com/Rule110.html)
+- Development Tools:
+  - Rustdoc boilerplate and documentation formatting assistance provided by [Claude.ai](https://claude.ai)
+  - rust-analyzer (vs-code extension)
